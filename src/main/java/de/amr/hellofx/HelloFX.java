@@ -1,5 +1,7 @@
 package de.amr.hellofx;
 
+import java.util.logging.Logger;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -11,8 +13,10 @@ import javafx.stage.Stage;
 
 public class HelloFX extends Application {
 
+	private static Logger log = Logger.getGlobal();
+
 	public static void main(String[] args) {
-		System.out.println("JavaFX version: %s, runtime version: %s".formatted(System.getProperty("javafx.version"),
+		log.info("JavaFX version: %s, runtime version: %s".formatted(System.getProperty("javafx.version"),
 				System.getProperty("javafx.runtime.version")));
 		launch(args);
 	}
@@ -23,12 +27,12 @@ public class HelloFX extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Hello, JavaFX!");
 		primaryStage.show();
-		System.out.println("Application started");
+		log.info("Application started");
 	}
 
 	@Override
 	public void stop() throws Exception {
-		System.out.println("Application stopped");
+		log.info("Application stopped");
 	}
 
 	private StackPane createSceneContent() {
