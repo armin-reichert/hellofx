@@ -20,7 +20,10 @@ public class HelloFX extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Hello FX");
 		primaryStage.show();
-		System.out.println("Application started");
+		var version = System.getProperty("javafx.version");
+		var runtimeVersion = System.getProperty("javafx.runtime.version");
+		System.out
+				.println("Application started, JavaFX version: %s, runtime version: %s".formatted(version, runtimeVersion));
 	}
 
 	@Override
