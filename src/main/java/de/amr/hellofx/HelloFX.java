@@ -16,7 +16,6 @@ public class HelloFX extends Application {
 	private static Logger log = Logger.getLogger(HelloFX.class.getName());
 
 	public static void main(String[] args) {
-		log.info(versionInfo());
 		launch(args);
 	}
 
@@ -31,6 +30,7 @@ public class HelloFX extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Hello, JavaFX!");
 		primaryStage.show();
+		log.info(versionInfo());
 		log.info("Application started");
 	}
 
