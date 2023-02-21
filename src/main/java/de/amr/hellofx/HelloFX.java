@@ -16,13 +16,13 @@ public class HelloFX extends Application {
 	private static Logger log = Logger.getLogger(HelloFX.class.getName());
 
 	public static void main(String[] args) {
-		logVersionInfo();
+		log.info(versionInfo());
 		launch(args);
 	}
 
-	private static void logVersionInfo() {
-		log.info("JavaFX version: %s, runtime version: %s".formatted(System.getProperty("javafx.version"),
-				System.getProperty("javafx.runtime.version")));
+	private static String versionInfo() {
+		return "JavaFX %s, runtime %s".formatted(System.getProperty("javafx.version"),
+				System.getProperty("javafx.runtime.version"));
 	}
 
 	@Override
@@ -41,8 +41,8 @@ public class HelloFX extends Application {
 
 	private StackPane createSceneContent() {
 		var content = new StackPane();
-		var text = new Text("Hello, JavaFX!");
-		text.setFont(Font.font("Serif", FontWeight.EXTRA_BOLD, 60));
+		var text = new Text(versionInfo());
+		text.setFont(Font.font("Serif", FontWeight.EXTRA_BOLD, 30));
 		text.setFill(Color.RED);
 		content.getChildren().add(text);
 		return content;
