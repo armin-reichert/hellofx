@@ -13,12 +13,16 @@ import javafx.stage.Stage;
 
 public class HelloFX extends Application {
 
-	private static Logger log = Logger.getGlobal();
+	private static Logger log = Logger.getLogger(HelloFX.class.getName());
 
 	public static void main(String[] args) {
+		logVersionInfo();
+		launch(args);
+	}
+
+	private static void logVersionInfo() {
 		log.info("JavaFX version: %s, runtime version: %s".formatted(System.getProperty("javafx.version"),
 				System.getProperty("javafx.runtime.version")));
-		launch(args);
 	}
 
 	@Override
