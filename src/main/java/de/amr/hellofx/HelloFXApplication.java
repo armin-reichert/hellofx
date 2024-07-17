@@ -1,7 +1,5 @@
 package de.amr.hellofx;
 
-import java.util.logging.Logger;
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -11,32 +9,36 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class HelloFX extends Application {
+import java.util.logging.Logger;
 
-	private static Logger log = Logger.getLogger(HelloFX.class.getName());
+/**
+ * JavaFX Hello World Application.
+ *
+ * @author Armin Reichert
+ */
+public class HelloFXApplication extends Application {
 
-	public static void main(String[] args) {
-		launch(args);
-	}
+	private static final Logger LOGGER = Logger.getLogger(HelloFXApplication.class.getName());
 
 	private static String versionInfo() {
-		return "JavaFX %s, runtime %s".formatted(System.getProperty("javafx.version"),
-				System.getProperty("javafx.runtime.version"));
+		return String.format("JavaFX %s, runtime %s",
+			System.getProperty("javafx.version"),
+			System.getProperty("javafx.runtime.version"));
 	}
 
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	public void start(Stage primaryStage) {
 		var scene = new Scene(createSceneContent(), 600, 400);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Hello, JavaFX!");
 		primaryStage.show();
-		log.info(versionInfo());
-		log.info("Application started");
+		LOGGER.info(versionInfo());
+		LOGGER.info("Application started");
 	}
 
 	@Override
-	public void stop() throws Exception {
-		log.info("Application stopped");
+	public void stop() {
+		LOGGER.info("Application stopped");
 	}
 
 	private StackPane createSceneContent() {

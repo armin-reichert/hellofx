@@ -23,13 +23,16 @@ SOFTWARE.
 */
 package de.amr.hellofx;
 
+import javafx.application.Application;
+
 /**
- * @author Armin Reichert
+ * Launcher for Hello World Application.
  *
+ * @author Armin Reichert
  */
 public class Main {
 
 	public static void main(String[] args) {
-		HelloFX.main(args);
+		Application.launch(HelloFXApplication.class, args);
 	}
 }
